@@ -9,7 +9,7 @@ const storage = multer.diskStorage({
     },
     filename: function (req, file, cb) {
         // Ensure that each file has a unique name
-        cb(null, Date.now() + path.extname(file.originalname));
+        cb(null, Date.now() +file.fieldname+ path.extname(file.originalname));
     }
 });
 
