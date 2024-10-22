@@ -5,6 +5,9 @@ const Category=mongoose.Schema({
         required:true,
        
     },
+    image:{
+        type:String
+    },
     createdAt:{
         type:Date,
         defualt:new Date
