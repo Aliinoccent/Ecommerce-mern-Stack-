@@ -5,7 +5,7 @@ exports.catgory=async(req,res)=>{
     const {name}=req.body;
     console.log(name);
     try{
-        const newCatgory=new categorySchema({name});
+        const newCatgory=new categorySchema({name , image: req.file ? req.file.path : null });
         await newCatgory.save();
         res.json({data:newCatgory,succss:true,statuscode:200})
     }
